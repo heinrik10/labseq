@@ -1,16 +1,10 @@
 version: "3.3"
 services:
   quarkus:
+    image: paketobuildpacks/quarkus
     container_name: quarkus
     build:
-      context: ./labseq-quarkus/src/main/docker/Dockerfile.jvm
-      dockerfile: Dockerfile
+      context: .\labseq-quarkus\src\main\docker
+      dockerfile: Dockerfile.jvm
     ports:
       - "8080:8080"
-  angular:
-    container_name: angular
-    build:
-      context: ./labseq-angular
-      dockerfile: Dockerfile
-    ports:
-      - "4042:4042"
